@@ -1,0 +1,16 @@
+{
+  "functions": {
+    "api/*.js": {
+      "maxDuration": 30
+    },
+    "api/**/*.js": {
+      "maxDuration": 30
+    }
+  },
+  "crons": [
+    {
+      "path": "/api/cron/publish-due",
+      "schedule": "*/10 * * * *"
+    }
+  ]
+}

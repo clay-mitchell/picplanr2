@@ -1,34 +1,34 @@
-PicPlanr Version 34: Deep Website Analysis
+PICPLANR 2 — COMPLETE VERSION 34 UPLOAD
 
-Replace at the main level of GitHub:
-- index.html
-- app-v32.js
-- styles-v32.css
+Upload the CONTENTS of this folder to the main level of the new GitHub
+repository called picplanr2.
 
-Add this new file in this exact folder:
-- api/website/analyse.js
+The repository should show these at the top level:
 
-Do not delete or replace any social connection, publishing, Supabase or domain files.
+api/
+assets/
+supabase/
+index.html
+app-v32.js
+styles-v32.css
+package.json
+vercel.json
+README.md
 
-What this version does:
-- reads up to six useful public website pages
-- analyses customer markets, brand tone and positioning
-- shows evidence-led strengths and weaknesses
-- reviews trust, calls to action and the customer journey
-- gives limited on-page search visibility advice
-- creates five content pillars, three quick wins and three first content ideas
-- passes the resulting brand profile into later PicPlanr image and caption analysis
-- keeps the Account Strength result inside the Account Review page
+Do not upload the ZIP file itself to GitHub.
+Do not put this whole folder inside another folder in GitHub.
 
-Testing:
-1. Upload the four files, preserving the api/website folder.
-2. Wait for Vercel to show Ready.
-3. Open the newest unique .vercel.app deployment first.
-4. Enter boxhub.uk and click Decode my brand.
-5. The analysis should identify the business from website evidence and list the pages explored.
+After uploading to GitHub:
 
-Required Vercel setting:
-- OPENAI_API_KEY must already be present.
+1. In Vercel choose Add New > Project.
+2. Import the new picplanr2 repository.
+3. Copy the environment variables from the old PicPlanr Vercel project.
+4. Deploy without adding the custom domain yet.
+5. Test using the new .vercel.app address.
+6. Enter boxhub.uk and click Decode my brand.
 
-Optional:
-- OPENAI_TEXT_MODEL, otherwise gpt-4.1-mini is used.
+Important current limitations:
+- Instagram has the most complete connection foundation.
+- LinkedIn and TikTok currently have connection-start routes, but their full
+  callback, token storage and publishing flows still require completion.
+- Keep the old Vercel project as a backup until this new version is tested.
