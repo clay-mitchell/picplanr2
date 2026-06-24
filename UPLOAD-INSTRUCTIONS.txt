@@ -1,0 +1,34 @@
+PicPlanr Version 34: Deep Website Analysis
+
+Replace at the main level of GitHub:
+- index.html
+- app-v32.js
+- styles-v32.css
+
+Add this new file in this exact folder:
+- api/website/analyse.js
+
+Do not delete or replace any social connection, publishing, Supabase or domain files.
+
+What this version does:
+- reads up to six useful public website pages
+- analyses customer markets, brand tone and positioning
+- shows evidence-led strengths and weaknesses
+- reviews trust, calls to action and the customer journey
+- gives limited on-page search visibility advice
+- creates five content pillars, three quick wins and three first content ideas
+- passes the resulting brand profile into later PicPlanr image and caption analysis
+- keeps the Account Strength result inside the Account Review page
+
+Testing:
+1. Upload the four files, preserving the api/website folder.
+2. Wait for Vercel to show Ready.
+3. Open the newest unique .vercel.app deployment first.
+4. Enter boxhub.uk and click Decode my brand.
+5. The analysis should identify the business from website evidence and list the pages explored.
+
+Required Vercel setting:
+- OPENAI_API_KEY must already be present.
+
+Optional:
+- OPENAI_TEXT_MODEL, otherwise gpt-4.1-mini is used.

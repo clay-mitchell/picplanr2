@@ -1,0 +1,198 @@
+<!doctype html>
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>PicPlanr V2 Test</title><link href="styles-v32.css?v=34" rel="stylesheet"/></head><body>
+<div class="app"><aside><div class="brand brand-logo"><img alt="PicPlanr logo" src="assets/picplanr-logo.png"/></div><button class="nav active" data-step="onboarding">1. Account setup</button><button class="nav" data-step="connections">2. Connected accounts</button><button class="nav" data-step="audit">3. Account review</button><button class="nav" data-step="upload">4. Upload folder</button><button class="nav" data-step="posts">5. Content ideas</button><button class="nav" data-step="calendar">6. Smart calendar</button><div class="side-note"><strong>Version 34</strong><span>Deep website analysis, brand decoding, market insights and personalised content direction.</span></div></aside>
+<main><header><div class="header-title-wrap"><img alt="PicPlanr logo" class="header-logo" src="assets/picplanr-logo.png"/><div><small>PICPLANR WORKSPACE</small><h1 id="title">Account setup</h1></div></div><div class="pill" id="statusPill">Not started</div></header>
+<section class="view active" id="onboarding"><div class="hero"><div><small>STEP 1</small><h2>Teach PicPlanr who is speaking</h2><p>The AI uses this profile to shape its tone, content strategy and recommendations.</p></div></div>
+<div class="choice-grid"><button class="account-choice selected" data-type="Business"><strong>Business</strong><span>Brands, venues, shops, services and organisations</span></button><button class="account-choice" data-type="Individual"><strong>Individual</strong><span>Influencers, creators, professionals and personal accounts</span></button></div>
+<div class="form-grid"><label>Name<input autocomplete="organization" id="accountName" placeholder="Enter your name or business name"/></label><label>Industry or content category<input id="industry" placeholder="e.g. Fashion, fitness, events, photography"/></label><label>Primary platform<select id="platform"><option>Instagram</option><option>LinkedIn</option><option>TikTok</option></select></label><label>Main goal<select id="goal"><option>Increase enquiries</option><option>Grow engagement</option><option>Build trust</option><option>Grow followers</option><option>Promote partnerships</option></select></label><label>Instagram handle<input id="instagram" placeholder="@yourhandle"/></label><label>LinkedIn page<input id="linkedin" placeholder="Company or profile name"/></label><label>TikTok handle<input id="tiktok" placeholder="@yourhandle"/></label><label>Website<input id="website" placeholder="https://yourwebsite.com"/></label><label>Competitors or inspiration accounts<input id="competitors" placeholder="Account names separated by commas"/></label></div><div class="connection-note"><strong>Automatic account understanding</strong><span>Enter your handles now. In the live product, connected social accounts will let PicPlanr study recent posts, captions, profile details and performance data automatically. This test creates a first-pass profile from the account information above.</span></div><div class="website-analysis-intro"><div class="website-analysis-icon">✦</div><div><strong>Deep website analysis</strong><span>PicPlanr will explore your main public pages, understand your markets and tone, then reveal strengths, weaknesses and content opportunities.</span></div></div><button class="primary" id="buildProfile">Decode my brand</button><div class="website-analysis-result hidden" id="profileResult"></div></section>
+<section class="view" id="connections">
+<div class="hero">
+<div>
+<small>STEP 2</small>
+<h2>Connect social accounts</h2>
+<p>Clients sign in securely with the social platform. PicPlanr never receives or stores their password.</p>
+</div>
+<span class="pill" id="connectionSummary">No accounts connected</span>
+</div>
+<div class="connections-grid">
+<article class="connection-card">
+<div class="connection-brand instagram-brand">
+<div class="connection-icon">◎</div>
+<div>
+<h3>Instagram</h3>
+<p>Publish approved single-image posts and carousels.</p>
+</div>
+</div>
+<div class="connection-status">
+<span class="status-dot"></span>
+<strong id="instagramStatus">Not connected</strong>
+</div>
+<button class="primary" id="connectInstagram">Connect Instagram</button>
+<p class="connection-help">Works with eligible professional accounts once the Meta developer application is approved.</p>
+</article>
+<article class="connection-card">
+<div class="connection-brand linkedin-brand">
+<div class="connection-icon">in</div>
+<div>
+<h3>LinkedIn</h3>
+<p>Publish to an individual profile or an authorised company page.</p>
+</div>
+</div>
+<div class="connection-status">
+<span class="status-dot"></span>
+<strong id="linkedinStatus">Not connected</strong>
+</div>
+<button class="primary" id="connectLinkedIn">Connect LinkedIn</button>
+<p class="connection-help">Company-page publishing requires the connected user to hold the correct page role.</p>
+</article>
+<article class="connection-card">
+<div class="connection-brand tiktok-brand">
+<div class="connection-icon">♪</div>
+<div>
+<h3>TikTok</h3>
+<p>Schedule and publish approved short-form videos.</p>
+</div>
+</div>
+<div class="connection-status">
+<span class="status-dot"></span>
+<strong id="tiktokStatus">Not connected</strong>
+</div>
+<button class="primary" id="connectTikTok">Connect TikTok</button>
+<p class="connection-help">Requires TikTok Login Kit and Content Posting API approval.</p>
+</article>
+</div>
+<div class="publishing-readiness">
+<div>
+<small>PUBLISHING SETUP</small>
+<h3>Automatic publishing readiness</h3>
+</div>
+<div class="readiness-list">
+<div><span id="readyDatabase">○</span><p><strong>Database</strong><small>Stores users, connections and scheduled posts</small></p></div>
+<div><span id="readyStorage">○</span><p><strong>Image storage</strong><small>Provides public media links for publishing</small></p></div>
+<div><span id="readyInstagram">○</span><p><strong>Instagram application</strong><small>Meta permissions and application review</small></p></div>
+<div><span id="readyLinkedIn">○</span><p><strong>LinkedIn application</strong><small>LinkedIn permissions and application review</small></p></div><div><span id="readyTikTok">○</span><p><strong>TikTok application</strong><small>Login Kit and Content Posting approval</small></p></div>
+<div><span id="readyScheduler">○</span><p><strong>Publishing scheduler</strong><small>Checks for approved posts that are due</small></p></div>
+</div>
+<div class="connection-note" id="setupMessage">
+<strong>Safe test mode</strong>
+<span>This build can test the full scheduling flow without publishing publicly. Real publishing activates after the required platform credentials are added.</span>
+</div>
+</div>
+</section>
+<section class="view" id="audit">
+<div class="hero">
+<div>
+<small>STEP 3</small>
+<h2>Improve the foundations</h2>
+<p>PicPlanr reviews the profile alongside the account information, then suggests clear visual, content and positioning improvements.</p>
+</div>
+<button class="primary" id="runAudit">Run account review</button>
+</div>
+<section class="profile-reference-card">
+<div class="profile-reference-heading"><div><small>SOCIAL ACCOUNT REVIEW</small><h3>Connected account preview</h3><p class="muted">PicPlanr will only show a real Instagram or TikTok profile after the account has been securely connected. It will not create a profile from a typed handle.</p></div></div>
+<div class="truthful-preview-grid">
+<article class="truthful-account-card"><div class="truthful-account-heading"><div class="platform-round instagram-round">IG</div><div><span>Instagram</span><strong id="truthfulInstagramHandle">@yourhandle</strong></div></div><div class="connection-state-box"><span class="connection-state-pill">Not connected</span><h4>Live Instagram preview unavailable</h4><p>Profile image, biography, followers, recent posts and visual consistency cannot be loaded from a handle alone.</p></div><div class="truthful-account-actions"><button class="primary" id="connectInstagramFromReview" type="button">Connect Instagram</button><button class="secondary" id="uploadInstagramScreenshot" type="button">Upload profile screenshot</button><input accept="image/*" hidden="" id="instagramScreenshotInput" type="file"/></div><div class="manual-screenshot-preview hidden" id="instagramScreenshotPreviewWrap"><span>Manual screenshot preview</span><img alt="Uploaded Instagram profile screenshot" id="instagramScreenshotPreview"/></div></article>
+<article class="truthful-account-card"><div class="truthful-account-heading"><div class="platform-round tiktok-round">♪</div><div><span>TikTok</span><strong id="truthfulTikTokHandle">@yourhandle</strong></div></div><div class="connection-state-box"><span class="connection-state-pill">Not connected</span><h4>Live TikTok preview unavailable</h4><p>Profile image, biography, followers, likes and recent videos cannot be loaded from a handle alone.</p></div><div class="truthful-account-actions"><button class="primary" id="connectTikTokFromReview" type="button">Connect TikTok</button><button class="secondary" id="uploadTikTokScreenshot" type="button">Upload profile screenshot</button><input accept="image/*" hidden="" id="tiktokScreenshotInput" type="file"/></div><div class="manual-screenshot-preview hidden" id="tiktokScreenshotPreviewWrap"><span>Manual screenshot preview</span><img alt="Uploaded TikTok profile screenshot" id="tiktokScreenshotPreview"/></div></article>
+</div>
+<div class="truthful-review-note"><strong>What PicPlanr can review now</strong><span>Only the information entered during onboarding.</span></div>
+<div class="truthful-review-note live-note"><strong>What PicPlanr can review after connection</strong><span>Real profile image, biography, recent content, statistics, visual consistency and performance.</span></div>
+</section><div class="empty" id="auditResult">Complete account setup, then run the review.</div></section>
+
+
+<section class="view" id="upload"><div class="hero"><div><small>STEP 3</small><h2>Upload images or videos</h2><p>PicPlanr analyses images for post planning and can now carry approved videos into TikTok scheduling.</p></div><button class="primary" id="chooseFolder">Choose folder</button></div><input accept="image/*,video/mp4,video/quicktime" directory="" hidden="" id="folderInput" multiple="" type="file" webkitdirectory=""/><input accept="image/*,video/mp4,video/quicktime" hidden="" id="fileInput" multiple="" type="file"/><div class="drop" id="drop"><strong>Drop a folder, images or videos here</strong><span>Images: JPG, PNG or WebP · Videos: MP4 or MOV</span><button id="chooseFiles">Choose files instead</button></div><div class="progress-wrap hidden" id="progressWrap"><div><span id="progressText">Preparing…</span><span id="progressCount">0 / 0</span></div><div class="progress"><i id="progressBar"></i></div></div><div class="preview-grid" id="previewGrid"></div><button class="primary hidden" id="analyseFolder">Analyse and create post groups</button></section>
+<section class="view" id="posts">
+<div class="hero">
+<div>
+<small>STEP 5</small>
+<h2>Content ideas</h2>
+<p>Every content idea is checked against the original images before captions are shown.</p>
+</div>
+<button class="secondary" id="approveAll">Approve all selected</button>
+</div>
+<section class="ideas-overview hidden" id="ideasOverview">
+<div class="ideas-heading">
+<div>
+<small>AT A GLANCE</small>
+<h3>Your content plan</h3>
+<p class="muted" id="ideasSummary">PicPlanr has created a balanced mix of content from your upload.</p>
+</div>
+<div class="idea-legend">
+<span class="legend-item reel-legend">Reels</span>
+<span class="legend-item carousel-legend">Carousels</span>
+<span class="legend-item story-legend">Stories</span>
+<span class="legend-item post-legend">Posts</span>
+</div>
+</div>
+<div class="ideas-grid" id="ideasGrid"></div>
+</section>
+<section class="detailed-ideas">
+<div class="section-title-row">
+<div>
+<small>REVIEW AND APPROVE</small>
+<h3>1. Post and carousel ideas</h3>
+<p class="muted">Every uploaded image is used once. Captions are written as natural social posts, not descriptions of the photograph.</p>
+</div>
+</div>
+<div class="empty" id="groups">Upload and analyse a folder first.</div>
+</section>
+<section class="story-ideas-panel hidden" id="storyIdeasPanel">
+<div class="section-title-row">
+<div>
+<small>QUICK CONTENT</small>
+<h3>2. Story ideas and updates</h3>
+<p class="muted">Short Story text based on the main subject clearly visible in each portrait image.</p>
+</div>
+<span class="story-count" id="storyCount">0 ideas</span>
+</div>
+<div class="story-ideas-grid" id="storyIdeas"></div>
+</section>
+</section>
+<section class="view" id="calendar">
+<div class="hero calendar-hero">
+<div>
+<small>STEP 5</small>
+<h2>Your content schedule</h2>
+<p>Approved posts are spread across the month, with no more than four scheduled in any week.</p>
+</div>
+<div class="calendar-actions">
+<button class="secondary" id="connectGoogle">Connect Google Calendar</button>
+<button class="secondary" id="exportCalendar">Export month</button><button class="secondary" id="savePublishingQueue">Save publishing queue</button>
+<div class="schedule-rule"><strong>Monthly balance</strong><span>Spread over the next 30 days · maximum 4 per week</span></div><button class="primary" id="makeSchedule">Build schedule</button>
+</div>
+</div>
+<div class="hidden" id="calendarReady">
+<section class="week-panel">
+<div class="week-heading">
+<div>
+<small>AT A GLANCE</small>
+<h3>This week’s schedule</h3>
+<p class="muted" id="weekRange"></p>
+</div>
+<span class="week-note">Click any post to view or edit the full caption</span>
+</div>
+<div class="week-schedule" id="weekSchedule"></div>
+</section>
+<section class="month-panel">
+<div class="calendar-toolbar">
+<button class="icon-btn" id="prevMonth">‹</button>
+<div>
+<h3 id="monthTitle">Month</h3>
+<p class="muted" id="calendarSummary">Approve post groups first.</p>
+</div>
+<button class="icon-btn" id="nextMonth">›</button>
+</div>
+<div class="month-calendar empty" id="schedule">Approve post groups first.</div>
+</section>
+</div>
+</section>
+<div class="modal hidden" id="postModal"><div class="modal-card"><button class="modal-close" id="closeModal">×</button><img alt="Post preview" id="modalImage"/><div class="modal-body"><div class="tags" id="modalTags"></div><h2 id="modalTitle"></h2><p class="muted" id="modalWhen"></p><label>Selected caption<textarea id="modalCaption" rows="7"></textarea></label><p class="reason" id="modalReason"></p><div class="publish-state"><span>Status</span><strong id="modalPublishStatus">Draft</strong></div><div class="modal-actions"><button class="secondary" id="addGooglePost">Add to Google Calendar</button><button class="primary" id="saveCaption">Save caption</button></div></div></div></div>
+</main></div>
+<div aria-live="polite" class="loading-overlay hidden" id="loadingOverlay" role="status">
+<div class="loading-card">
+<div class="loading-spinner"></div>
+<strong id="loadingTitle">Working on it…</strong>
+<span id="loadingMessage">PicPlanr is processing your request.</span>
+</div>
+</div>
+<script src="app-v32.js?v=34"></script></body></html>
